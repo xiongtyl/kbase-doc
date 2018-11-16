@@ -3,6 +3,8 @@
  */
 package com.eastrobot.watermark;
 
+import com.eastrobot.domain.WaterMarkInfo;
+
 import java.io.File;
 
 /**
@@ -26,4 +28,12 @@ public abstract class AbstractProcessor {
 	 * @throws WatermarkException
 	 */
 	public abstract void process() throws WatermarkException;
+
+
+	/**
+	 *  写入文字水印
+	 * @author carxiong at 2018年11月16日 下午2:40:24
+	 * @throws WatermarkException
+	 */
+	public abstract void writeTextWaterMark(WaterMarkInfo waterMarkInfo) throws WatermarkException;
 }

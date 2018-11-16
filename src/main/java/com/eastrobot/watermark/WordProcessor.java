@@ -10,6 +10,7 @@ import java.io.InputStream;
 
 import javax.xml.bind.JAXBException;
 
+import com.eastrobot.domain.WaterMarkInfo;
 import org.docx4j.Docx4J;
 import org.docx4j.XmlUtils;
 import org.docx4j.openpackaging.exceptions.Docx4JException;
@@ -59,7 +60,12 @@ public class WordProcessor extends AbstractProcessor {
 			throw new WatermarkException("IOException", e);
 		}
 	}
-	
+
+	@Override
+	public void writeTextWaterMark(WaterMarkInfo waterMarkInfo) throws WatermarkException {
+
+	}
+
 	private SectPr createSectPr() throws JAXBException, Docx4JException, IOException {
 		String openXML = "<w:sectPr xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\">"
 				// Word adds the background image in each of 3 header parts

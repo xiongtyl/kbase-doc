@@ -1,0 +1,46 @@
+kkFileView   
+能支持大部分文件在线预览
+主要实现技术为：
+redis
+OpenOffice或者LibreOffice
+spring boot： spring boot开发参考指南
+freemarker
+redisson
+jodconverter
+
+
+
+https://github.com/ekoz/kbase-doc
+kbase-doc
+文档在线预览编辑，文档水印
+
+
+
+
+
+pdf 加水印
+https://blog.csdn.net/yangymy/article/details/80541127
+
+word 加水印
+PageOffice-->WaterMark
+https://www.cnblogs.com/pageoffice/p/9006487.html
+https://blog.csdn.net/u010964869/article/details/53642218
+打印及显示
+https://blog.csdn.net/u012102536/article/details/70920417
+
+https://www.cnblogs.com/DreamDrive/p/7090284.html
+只读模式
+http://www.iteye.com/problems/79810
+
+
+excel  
+http://www.cnblogs.com/Dream2hc/p/java24787637.html
+https://blog.csdn.net/u012102536/article/details/71194101
+
+
+
+ppt
+
+
+
+

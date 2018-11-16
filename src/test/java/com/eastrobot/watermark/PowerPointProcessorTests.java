@@ -19,8 +19,8 @@ public class PowerPointProcessorTests {
 
 	@Test
 	public void testProcess() {
-		File file = new File("E:\\ConvertTester\\ppt\\看看addThread方法的源码1.pptx");
-		File imgFile = new File("E:\\ConvertTester\\images\\jshrss-logo.png");
+		File file = new File("C:\\Users\\carxiong\\Desktop\\熊常徽简历.pptx");
+		File imgFile = new File("C:\\Users\\carxiong\\Desktop\\kbs-watermark-20181116161710.png");
 		
 		PowerPointProcessor processor = new PowerPointProcessor(file, imgFile);
 		try {

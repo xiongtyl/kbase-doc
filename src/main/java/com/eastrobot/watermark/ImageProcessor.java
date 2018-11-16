@@ -16,6 +16,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import com.eastrobot.domain.WaterMarkInfo;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.poi.util.IOUtils;
 
@@ -54,5 +55,10 @@ public class ImageProcessor extends AbstractProcessor {
 		}
 	}
 
-	
+	@Override
+	public void writeTextWaterMark(WaterMarkInfo waterMarkInfo) throws WatermarkException {
+
+	}
+
+
 }

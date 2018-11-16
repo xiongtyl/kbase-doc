@@ -6,6 +6,7 @@ package com.eastrobot.watermark;
 import java.io.File;
 import java.io.IOException;
 
+import com.eastrobot.domain.WaterMarkInfo;
 import org.apache.commons.io.FileUtils;
 import org.docx4j.openpackaging.exceptions.Docx4JException;
 import org.docx4j.openpackaging.packages.SpreadsheetMLPackage;
@@ -51,7 +52,12 @@ public class ExcelProcessor extends AbstractProcessor {
 			throw new WatermarkException("Xlsx4jException", e);
 		}
 	}
-	
+
+	@Override
+	public void writeTextWaterMark(WaterMarkInfo waterMarkInfo) throws WatermarkException {
+
+	}
+
 	/**
 	 * 使用水印图片作为excel背景，达到水印效果<但打印时不会生效>
 	 * @param pkg

@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import com.eastrobot.domain.WaterMarkInfo;
 import org.apache.commons.io.IOUtils;
 import org.apache.poi.sl.usermodel.PictureData.PictureType;
 import org.apache.poi.xslf.usermodel.XMLSlideShow;
@@ -61,5 +62,10 @@ public class PowerPointProcessor extends AbstractProcessor {
 		} finally {
 			IOUtils.closeQuietly(output, pptx);
 		}
+	}
+
+	@Override
+	public void writeTextWaterMark(WaterMarkInfo waterMarkInfo) throws WatermarkException {
+
 	}
 }
