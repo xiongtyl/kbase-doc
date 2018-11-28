@@ -78,8 +78,6 @@ public class SecurityUtils {
         } catch (IOException e) {
             throw e;
         }
-
-
     }
 
     public static byte[] file2ByteArray(String filePath) throws IOException {
@@ -87,12 +85,10 @@ public class SecurityUtils {
         InputStream in = new FileInputStream(filePath);
         byte[] data = toByteArray(in);
         in.close();
-
         return data;
     }
 
     public static byte[] toByteArray(InputStream in) throws IOException {
-
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024 * 4];
         int n = 0;

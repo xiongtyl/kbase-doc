@@ -7,6 +7,9 @@ import com.eastrobot.security.Security;
 import com.eastrobot.security.SecurityUtils;
 import com.eastrobot.security.UUIDUtils;
 import com.eastrobot.security.aescbc.AESCBC;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import org.junit.Test;
 
 import javax.crypto.SecretKeyFactory;
@@ -17,6 +20,7 @@ import java.security.GeneralSecurityException;
 import java.security.SecureRandom;
 import java.security.spec.KeySpec;
 import java.util.Base64;
+import java.util.Date;
 import java.util.Random;
 import java.util.UUID;
 
@@ -98,13 +102,11 @@ public class TinkUtilsTests {
         String fileEncryptName = "encrypt_" + fileName;
         String fileDecryptName = "decrypt_" + fileName;
         long time = System.currentTimeMillis();
-        SecurityUtils.encryptFile(fileBasePath + fileName,fileBasePath + fileEncryptName);
-        System.out.println(System.currentTimeMillis()-time);
-        SecurityUtils.decryptFile(fileBasePath + fileEncryptName,fileBasePath + fileDecryptName);
-        System.out.println(System.currentTimeMillis()-time);
+        SecurityUtils.encryptFile(fileBasePath + fileName, fileBasePath + fileEncryptName);
+        System.out.println(System.currentTimeMillis() - time);
+        SecurityUtils.decryptFile(fileBasePath + fileEncryptName, fileBasePath + fileDecryptName);
+        System.out.println(System.currentTimeMillis() - time);
     }
-
-
 
 
     @Test
@@ -145,10 +147,32 @@ public class TinkUtilsTests {
     }
 
 
-
     // private
 
     public static void main(String[] args) throws UnsupportedEncodingException {
+        String USER_PASS = "123456";
+        String OWNER_PASS = "654321";
+        try {
 
+            OutputStream file = new FileOutputStream(new File("C:\\Users\\carxiong\\Desktop\\officetest\\Test2.pdf"));
+
+            Document document = new Document();
+            PdfWriter writer = PdfWriter.getInstance(document, file);
+
+            writer.setEncryption(USER_PASS.getBytes(), OWNER_PASS.getBytes(),
+                    PdfWriter.ALLOW_PRINTING, PdfWriter.ENCRYPTION_AES_128);
+
+            document.open();
+            document.add(new Paragraph("Hello World, iText"));
+            document.add(new Paragraph(new Date().toString()));
+
+            document.close();
+            file.close();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+        System.out.println("OK.");
     }
 }
